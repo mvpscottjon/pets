@@ -8,7 +8,7 @@
 import Foundation
 
 class DebugLogger {
-    static func log(item: Any...) {
+    static func print(item: Any...) {
         #if DEBUG
             Swift.print(item)
         #endif

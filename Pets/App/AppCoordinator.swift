@@ -6,23 +6,27 @@
 //
 
 import Foundation
-import RxSwift
+import UIKit
 
-final class AppCoordinator: Coordinator<Void> {
+final class AppCoordinator: Coordinator {
     
+    var childCoordinator: [Coordinator] = []
+    var navigation: UINavigationController?
     private let window: UIWindow
-
+    
     init(window: UIWindow) {
         self.window = window
     }
     
-    override func start() -> Observable<Void> {
-        runMainFlow(window: window)
-        return .empty()
+    func start() {
+        let vc = ViewController()
+        vc.view.backgroundColor = .green
+        
+        window.rootViewController = vc
+    }
+    
+    func runMainFlow() {
+        
     }
 
-    func runMainFlow(window: UIWindow) {
-        let coordinator = MainCoordinator(window: window)
-        self.coordinator(to: coordinator).subscribe().disposed(by: bag)
-    }
 }
