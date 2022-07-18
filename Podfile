@@ -8,6 +8,8 @@ target 'Pets' do
   # Pods for Pets
     pod 'SnapKit'
     pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'RxTest'
     pod 'Alamofire'
     pod 'Kingfisher'
 
