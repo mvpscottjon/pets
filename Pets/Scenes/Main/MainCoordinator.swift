@@ -18,7 +18,11 @@ final class MainCoordinator: Coordinator<Void> {
     
     override func start() -> Observable<Void> {
         let tabBarVC = MainTabBarVC()
-        tabBarVC.viewControllers = [makeTabBarItemVC(tabBarItemType: .home), makeTabBarItemVC(tabBarItemType: .profile)]
+        tabBarVC.viewControllers = [
+            makeTabBarItemVC(tabBarItemType: .home),
+            makeTabBarItemVC(tabBarItemType: .wisperer),
+            makeTabBarItemVC(tabBarItemType: .profile)
+        ]
 
         window.rootViewController = tabBarVC
         
@@ -30,6 +34,8 @@ final class MainCoordinator: Coordinator<Void> {
         
         switch type {
         case .home:
+            vc = UIViewController()
+        case .wisperer:
             vc = UIViewController()
         case .profile:
             vc = UIViewController()

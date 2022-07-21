@@ -9,7 +9,6 @@ target 'Pets' do
     pod 'SnapKit'
     pod 'RxSwift'
     pod 'RxCocoa'
-    pod 'RxTest'
     pod 'Alamofire'
     pod 'Kingfisher'
 
