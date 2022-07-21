@@ -158,9 +158,7 @@
 				9AA5C7C6288044D000F5EBFE /* Utilites */,
 				9AA5C7C328803E3300F5EBFE /* Protocols */,
 				9AA5C7C028803DA100F5EBFE /* App */,
-				9AA5C7BF28803B2900F5EBFE /* Models */,
 				9AA5C7BE28803B1C00F5EBFE /* Resourse */,
-				9AA5C7BD28803B0800F5EBFE /* CustomViews */,
 				9AA5C7BC28803B0100F5EBFE /* VCs */,
 				9AA5C7992880385800F5EBFE /* Info.plist */,
 				9AA5C7E62884799400F5EBFE /* .gitattributes */,
@@ -195,26 +193,12 @@
 			path = VCs;
 			sourceTree = "<group>";
 		};
-		9AA5C7BD28803B0800F5EBFE /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomViews;
-			sourceTree = "<group>";
-		};
 		9AA5C7BE28803B1C00F5EBFE /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
 				9AA5C7942880385800F5EBFE /* Assets.xcassets */,
 			);
 			path = Resourse;
-			sourceTree = "<group>";
-		};
-		9AA5C7BF28803B2900F5EBFE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		9AA5C7C028803DA100F5EBFE /* App */ = {

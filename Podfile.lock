@@ -7,8 +7,6 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
-  - RxTest (6.5.0):
-    - RxSwift (= 6.5.0)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
@@ -16,7 +14,6 @@ DEPENDENCIES:
   - Kingfisher
   - RxCocoa
   - RxSwift
-  - RxTest
   - SnapKit
 
 SPEC REPOS:
@@ -26,7 +23,6 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
-    - RxTest
     - SnapKit
 
 SPEC CHECKSUMS:
@@ -35,9 +31,8 @@ SPEC CHECKSUMS:
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 70b65ad1960c55b55233f21987949bebb531b7ed
+PODFILE CHECKSUM: 6481a1446c21abe9f03116e12f5ff5006ef87e25
 
 COCOAPODS: 1.11.3
