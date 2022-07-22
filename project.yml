@@ -7,6 +7,8 @@ options:
     tabWidth: 4
     bundleIDPrefix: "com.seven" 
     xcodeVersion: "13.4"
+    postGenCommand: pod install
+
 targets:
     Pets:
         type: application
