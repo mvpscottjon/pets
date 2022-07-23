@@ -11,6 +11,9 @@ target 'Pets' do
     pod 'RxCocoa'
     pod 'Alamofire'
     pod 'Kingfisher'
+    pod 'FirebaseAuth'
+    pod 'FirebaseFirestore'
+    pod 'FirebaseAnalytics'
 
   #target 'PetsTests' do
    # inherit! :search_paths
