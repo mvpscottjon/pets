@@ -7,8 +7,8 @@
 
 import Foundation
 
-class DebugLogger {
-    static func log(item: Any...) {
+class Logger {
+    static func log(_ item: Any...) {
         #if DEBUG
             Swift.print(item)
         #endif
