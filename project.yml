@@ -29,5 +29,12 @@ targets:
             info: 
                 path: Sources/Pets/Info.plist
 
-
-
+    PetsTests:
+        type: bundle.unit-test
+        platform: iOS
+        deploymentTarget:
+            iOS: "15.0"
+        sources:
+            - path: PetsTests
+        dependencies:
+            - target: Pets
