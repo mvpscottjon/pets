@@ -20,7 +20,7 @@ class Coordinator<Result> {
     
     private func free<T>(_ coordinator: Coordinator<T>) {
         childCoordinator[coordinator.identifier] = nil
-        DebugLogger.log(item: "free coordinator: \(coordinator)")
+        Logger.log("free coordinator: \(coordinator)")
     }
     
     func coordinator<T>(to coordinator: Coordinator<T>) -> Observable<T> {
