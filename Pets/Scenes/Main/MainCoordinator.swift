@@ -36,7 +36,7 @@ final class MainCoordinator: Coordinator<Void> {
         case .home:
             vc = NewsFeedVC(vm: NewsFeedVM())
         case .wisperer:
-            vc = UIViewController()
+            vc = PetWispererVC(vm: PetWispererVM())
         case .profile:
             vc = UIViewController()
         }
