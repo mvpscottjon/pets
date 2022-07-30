@@ -764,6 +764,19 @@ PODS:
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
+  - OHHTTPStubs/Core (9.1.0)
+  - OHHTTPStubs/Default (9.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (9.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (9.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (9.1.0)
+  - OHHTTPStubs/Swift (9.1.0):
+    - OHHTTPStubs/Default
   - PromisesObjC (2.1.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
@@ -779,6 +792,7 @@ DEPENDENCIES:
   - FirebaseAuth
   - FirebaseFirestore
   - Kingfisher
+  - OHHTTPStubs/Swift
   - RxCocoa
   - RxSwift
   - SnapKit
@@ -805,6 +819,7 @@ SPEC REPOS:
     - leveldb-library
     - Libuv-gRPC
     - nanopb
+    - OHHTTPStubs
     - PromisesObjC
     - RxCocoa
     - RxRelay
@@ -832,12 +847,13 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: a73b18a2056521f5f7ce8f1800af7e1fcf29df8d
+PODFILE CHECKSUM: 721cc16caa4a17e9b366e0130752e4073af8a7f4
 
 COCOAPODS: 1.11.3
