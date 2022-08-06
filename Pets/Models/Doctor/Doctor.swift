@@ -1,16 +1,16 @@
 //
-//  Wisperer.swift
+//  Doctor.swift
 //  Pets
 //
-//  Created by Seven on 2022/7/26.
+//  Created by Seven on 2022/8/5.
 //
 
 import Foundation
 
-struct Wisperer: Decodable {
+struct Doctor {
     let name: String
     let title: String
-    let charge: String
+    let skill: String
     let language: String
     var imagUrl: URL?
 }
