@@ -31,6 +31,6 @@ extension UIColor {
 
 extension UIColor {
     static let mainColor = UIColor.init(hexString: "##aac3b6")
-    static let background = UIColor.init(hexString: "#0xF7F8F8")
+    static let background = UIColor.init(hexString: "#e6e6e6")
 }
 
