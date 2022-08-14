@@ -5,6 +5,7 @@ def core_pods
     pod 'SnapKit'
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'RxDataSources'
     pod 'Alamofire'
     pod 'Kingfisher'
     pod 'FirebaseAuth'
