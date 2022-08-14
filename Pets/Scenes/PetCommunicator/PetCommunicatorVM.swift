@@ -1,5 +1,5 @@
 //
-//  PetWispererVM.swift
+//  PetCommunicatorVM.swift
 //  Pets
 //
 //  Created by Seven on 2022/7/24.
@@ -9,23 +9,31 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-struct PetWispererVM {
+struct PetCommunicatorVM {
     
     enum Section {
         case doctor([Doctor])
-        case wisperer([Wisperer])
+        case wisperer([Communicator])
     }
     
     struct State {
         let sections: Driver<[Section]>
     }
     
+    struct Event {
+        let doctorViewTapped = PublishRelay<Doctor>()
+        let wisperViewTapped = PublishRelay<Doctor>()
+    }
+    
     // MARK: - Properties
     
     let state: State
+    let event = Event()
     
     private let sections = BehaviorRelay<[Section]>(value: [])
 
+    // MARK: - Initializers
+    
     init() {
         self.state = State(sections: sections.asDriver())
         
@@ -37,11 +45,16 @@ struct PetWispererVM {
         
         let wisperperURL = "https://yummytw.com/wp-content/uploads/20220511190123_26.jpeg"
         let mockWisperers = ["1", "2", "3", "4", "5"].map {
-            Wisperer(name: $0, title: $0, charge: $0, language: $0, imagUrl: URL(string: wisperperURL))
+            Communicator(name: $0, title: $0, charge: $0, language: $0, imagUrl: URL(string: wisperperURL))
         }
         
         var mockSections = [Section.doctor(mockDoctors)]
         mockSections.append(Section.wisperer(mockWisperers))
         sections.accept(mockSections)
+    }
+    
+    // MARK: Bindings
+    
+    private func bind() {
     }
 }

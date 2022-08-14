@@ -1,5 +1,5 @@
 //
-//  WispererAPIRequestTests.swift
+//  CommunicatorAPIRequestTests.swift
 //  PetsTests
 //
 //  Created by Seven on 2022/7/30.
@@ -10,7 +10,7 @@ import OHHTTPStubs
 
 @testable import Pets
 
-class WispererAPIRequestTests: XCTestCase {
+class CommunicatorAPIRequestTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -32,8 +32,8 @@ class WispererAPIRequestTests: XCTestCase {
             return HTTPStubsResponse(fileAtPath: file, statusCode: 200, headers: nil)
         })
         
-        let apiRequest = WispererAPIRequest()
-        var sut: WispererAPIRequest.Response?
+        let apiRequest = PetCommunicatorAPIRequest()
+        var sut: PetCommunicatorAPIRequest.Response?
         
         apiRequest.send(completion: { rs in
             switch rs {
@@ -48,8 +48,8 @@ class WispererAPIRequestTests: XCTestCase {
         waitForExpectations(timeout: 1.0)
         
         XCTAssertEqual(sut?.count, 23)
-        XCTAssertEqual(sut?.first?.unit, "單位")
-        XCTAssertEqual(sut?.first?.telephon, "電 話")
+        XCTAssertEqual(sut?.first?.title, "單位")
+        XCTAssertEqual(sut?.first?.language, "電 話")
     }
     
     func test_request_failed() throws {
@@ -61,7 +61,7 @@ class WispererAPIRequestTests: XCTestCase {
             return HTTPStubsResponse(error: error)
         })
         
-        let apiRequest = WispererAPIRequest()
+        let apiRequest = PetCommunicatorAPIRequest()
         
         apiRequest.send(completion: { rs in
             switch rs {

@@ -1,5 +1,5 @@
 //
-//  WispererView.swift
+//  PetCommunicatorView.swift
 //  Pets
 //
 //  Created by Seven on 2022/8/5.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WispererView: UIView {
+class PetCommunicatorView: UIView {
     
     private enum Constants {
         static let imageSize = CGSize(size: 30.0)
@@ -20,7 +20,7 @@ class WispererView: UIView {
         static let containerStackViewMarginInsets = UIEdgeInsets(horizontalInsets: 10.0, verticalInsets: 7.0)
     }
     
-    private let wisperer: Wisperer
+    private let wisperer: Communicator
     
     private lazy var photoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -56,7 +56,7 @@ class WispererView: UIView {
         return label
     }()
     
-    init(wisperer: Wisperer) {
+    init(wisperer: Communicator) {
         self.wisperer = wisperer
         super.init(frame: .zero)
         

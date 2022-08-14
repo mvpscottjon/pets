@@ -1,5 +1,5 @@
 //
-//  PetWispererVC.swift
+//  PetCommunicatorVC.swift
 //  Pets
 //
 //  Created by Seven on 2022/7/24.
@@ -9,8 +9,7 @@ import UIKit
 import RxSwift
 import SnapKit
 
-class PetWispererVC: UIViewController {
-
+class PetCommunicatorVC: UIViewController {
     private enum Constants {
         static let stackViewInsets = UIEdgeInsets(horizontalInsets: 10.0, verticalInsets: 5.0)
         static let backgroundColor = UIColor.background
@@ -19,9 +18,8 @@ class PetWispererVC: UIViewController {
     
     // MARK: - Properties
     
-    private let vm: PetWispererVM
+    private let vm: PetCommunicatorVM
     private let bag = DisposeBag()
-    
     
     // MARK: - Views
     
@@ -41,7 +39,7 @@ class PetWispererVC: UIViewController {
     
     // MARK: - Initializers
     
-    init(vm: PetWispererVM) {
+    init(vm: PetCommunicatorVM) {
         self.vm = vm
         super.init(nibName: nil, bundle: nil)
     }
@@ -83,7 +81,7 @@ class PetWispererVC: UIViewController {
             .disposed(by: bag)
     }
     
-    private func updateSectionViews(_ sections: [PetWispererVM.Section]) {
+    private func updateSectionViews(_ sections: [PetCommunicatorVM.Section]) {
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         
         sections.forEach {
@@ -93,7 +91,7 @@ class PetWispererVC: UIViewController {
     
     // MARK: - Factories
     
-    private func makeSectionView(section: PetWispererVM.Section) -> UIView {
+    private func makeSectionView(section: PetCommunicatorVM.Section) -> UIView {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -127,15 +125,26 @@ class PetWispererVC: UIViewController {
 
         stackView.addArrangedSubview(titleLabel)
         
-        doctors.forEach {
-            let view = DoctorView(doctor: $0)
+        doctors.forEach { doctor in
+            let view = DoctorView(doctor: doctor)
+            
+            let tapGesture = UITapGestureRecognizer()
+            view.addGestureRecognizer(tapGesture)
+            
+            tapGesture.rx.event
+                .map { _ in doctor }
+                .subscribe(with: self,onNext: { `self`, doctor in
+                    self.routeToDoctorDetail(doctor: doctor)
+                })
+                .disposed(by: bag)
+            
             stackView.addArrangedSubview(view)
         }
         
         return stackView
     }
     
-    private func makeWispererView(wisperers: [Wisperer]) -> UIView {
+    private func makeWispererView(wisperers: [Communicator]) -> UIView {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 10.0
@@ -146,11 +155,32 @@ class PetWispererVC: UIViewController {
         
         stackView.addArrangedSubview(titleLabel)
         
-        wisperers.forEach {
-            let view = WispererView(wisperer: $0 )
+        wisperers.forEach { wisperer in
+            let view = PetCommunicatorView(wisperer: wisperer)
             stackView.addArrangedSubview(view)
+            
+            let tapGesture = UITapGestureRecognizer()
+            view.addGestureRecognizer(tapGesture)
+            
+            tapGesture.rx.event
+                .map { _ in wisperer }
+                .subscribe(with: self,onNext: { `self`, wisperer in
+                    self.routeToWispererDetail(wisperer: wisperer)
+                })
+                .disposed(by: bag)
         }
         
         return stackView
+    }
+    
+    private func routeToDoctorDetail(doctor: Doctor) {
+        let vm = DoctorDetailVM(doctor: doctor)
+        let vc = DoctorDetailVC(vm: vm)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func routeToWispererDetail(wisperer: Communicator) {
+        let vc = CommunicatorDetailVC(vm: CommunicatorDetailVM(communicator: wisperer))
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
