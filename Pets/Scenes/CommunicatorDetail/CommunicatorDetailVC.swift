@@ -213,7 +213,7 @@ class CommunicatorDetailVC: UIViewController {
     // MARK: - Bindings
     
     private func bindViewModel() {
-        headImageView.kf.setImage(with: vm.communicator.imagUrl)
+        headImageView.kf.setImage(with: vm.communicator.imageUrl)
         
         nameLabel.text = "名稱"
         languageLabel.text = "語言"

@@ -123,7 +123,7 @@ class DoctorView: UIView {
     }
     
     private func updateUI() {
-        photoImageView.kf.setImage(with: doctor.imagUrl)
+        photoImageView.kf.setImage(with: doctor.imageUrl)
         nameLabel.text = doctor.name
         titleLabel.text = doctor.title
         skillLabel.text = doctor.skill

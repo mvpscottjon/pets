@@ -12,5 +12,5 @@ struct Doctor {
     let title: String
     let skill: String
     let language: String
-    var imagUrl: URL?
+    var imageUrl: URL?
 }

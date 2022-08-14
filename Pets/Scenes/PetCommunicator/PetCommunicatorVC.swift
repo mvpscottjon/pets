@@ -100,8 +100,8 @@ class PetCommunicatorVC: UIViewController {
         switch section {
         case .doctor(let doctors):
             sectionView = makeDoctorView(doctors: doctors)
-        case .wisperer(let wisperers):
-            sectionView = makeWispererView(wisperers: wisperers)
+        case .communicator(let communicator):
+            sectionView = makeCommunicatorView(communicator: communicator)
         }
         
         stackView.addArrangedSubview(sectionView)
@@ -144,7 +144,7 @@ class PetCommunicatorVC: UIViewController {
         return stackView
     }
     
-    private func makeWispererView(wisperers: [Communicator]) -> UIView {
+    private func makeCommunicatorView(communicator: [Communicator]) -> UIView {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 10.0
@@ -155,7 +155,7 @@ class PetCommunicatorVC: UIViewController {
         
         stackView.addArrangedSubview(titleLabel)
         
-        wisperers.forEach { wisperer in
+        communicator.forEach { wisperer in
             let view = PetCommunicatorView(wisperer: wisperer)
             stackView.addArrangedSubview(view)
             

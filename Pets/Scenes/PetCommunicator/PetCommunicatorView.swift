@@ -20,7 +20,7 @@ class PetCommunicatorView: UIView {
         static let containerStackViewMarginInsets = UIEdgeInsets(horizontalInsets: 10.0, verticalInsets: 7.0)
     }
     
-    private let wisperer: Communicator
+    private let communicator: Communicator
     
     private lazy var photoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -37,27 +37,27 @@ class PetCommunicatorView: UIView {
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = wisperer.name
+        label.text = communicator.name
         label.numberOfLines = 2
         return label
     }()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = wisperer.title
+        label.text = communicator.title
         label.numberOfLines = 2
         return label
     }()
     
     private lazy var chargeLabel: UILabel = {
         let label = UILabel()
-        label.text = wisperer.charge
+        label.text = communicator.charge
         label.numberOfLines = 2
         return label
     }()
     
     init(wisperer: Communicator) {
-        self.wisperer = wisperer
+        self.communicator = wisperer
         super.init(frame: .zero)
         
         setupViews()
@@ -111,9 +111,9 @@ class PetCommunicatorView: UIView {
     }
     
     private func updateUI() {
-        photoImageView.kf.setImage(with: wisperer.imagUrl)
-        nameLabel.text = wisperer.name
-        titleLabel.text = wisperer.title
-        chargeLabel.text = wisperer.charge
+        photoImageView.kf.setImage(with: communicator.imageUrl)
+        nameLabel.text = communicator.name
+        titleLabel.text = communicator.title
+        chargeLabel.text = communicator.charge
     }
 }

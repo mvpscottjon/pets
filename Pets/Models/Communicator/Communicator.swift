@@ -12,5 +12,5 @@ struct Communicator: Decodable {
     let title: String
     let charge: String
     let language: String
-    var imagUrl: URL?
+    var imageUrl: URL?
 }
