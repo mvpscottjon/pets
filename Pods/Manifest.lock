@@ -603,6 +603,7 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.24):
     - BoringSSL-GRPC/Interface (= 0.0.24)
   - BoringSSL-GRPC/Interface (0.0.24)
+  - Differentiator (5.0.0)
   - FirebaseAnalytics (9.0.0):
     - FirebaseAnalytics/AdIdSupport (= 9.0.0)
     - FirebaseCore (~> 9.0)
@@ -781,6 +782,10 @@ PODS:
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
@@ -794,6 +799,7 @@ DEPENDENCIES:
   - Kingfisher
   - OHHTTPStubs/Swift
   - RxCocoa
+  - RxDataSources
   - RxSwift
   - SnapKit
 
@@ -802,6 +808,7 @@ SPEC REPOS:
     - abseil
     - Alamofire
     - BoringSSL-GRPC
+    - Differentiator
     - FirebaseAnalytics
     - FirebaseAuth
     - FirebaseCore
@@ -822,6 +829,7 @@ SPEC REPOS:
     - OHHTTPStubs
     - PromisesObjC
     - RxCocoa
+    - RxDataSources
     - RxRelay
     - RxSwift
     - SnapKit
@@ -830,6 +838,7 @@ SPEC CHECKSUMS:
   abseil: ebe5b5529fb05d93a8bdb7951607be08b7fa71bc
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   FirebaseAnalytics: ea4f6f4b604a20b4de4d3c7f7a2cb51d9a989040
   FirebaseAuth: eae56c13e1161da89be202b1fae3ca60b4b8d689
   FirebaseCore: e4c0b5d9727eaee0b43f9ed00baff7500c188d7b
@@ -850,10 +859,11 @@ SPEC CHECKSUMS:
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 721cc16caa4a17e9b366e0130752e4073af8a7f4
+PODFILE CHECKSUM: 4e48fe51cdeefe404d9b41bd4b0942189435dfc8
 
 COCOAPODS: 1.11.3
