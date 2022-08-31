@@ -34,7 +34,7 @@ final class MainCoordinator: Coordinator<Void> {
         
         switch type {
         case .home:
-            vc = UIViewController()
+            vc = NewsFeedVC(vm: NewsFeedVM())
         case .wisperer:
             vc = UIViewController()
         case .profile:
