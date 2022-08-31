@@ -12,14 +12,14 @@ extension UITabBarItem {
     private enum Constants {
         static let homeItemImage = UIImage(systemName: "house.fill")
         static let homeItemTitle = "Home"
-        static let wispererItemImage = UIImage(systemName: "pawprint.fill")
-        static let wispererTitle = "PetsWisperer"
+        static let communicatorItemImage = UIImage(systemName: "pawprint.fill")
+        static let communicatorTitle = "Communicator"
         static let profileItemImage = UIImage(systemName: "person.crop.circle.fill")
         static let profileItemTitle = "Profile"
     }
     
     enum ItemType {
-        case home, wisperer, profile
+        case home, communicator, profile
         
         var title: String? {
             switch self {
@@ -27,8 +27,8 @@ extension UITabBarItem {
                 return Constants.homeItemTitle
             case .profile:
                 return Constants.profileItemTitle
-            case .wisperer:
-                return Constants.wispererTitle
+            case .communicator:
+                return Constants.communicatorTitle
             }
         }
         
@@ -38,11 +38,9 @@ extension UITabBarItem {
                 return Constants.homeItemImage
             case .profile:
                 return Constants.profileItemImage
-            case .wisperer:
-                return Constants.wispererItemImage
+            case .communicator:
+                return Constants.communicatorItemImage
             }
         }
-        
     }
-    
 }

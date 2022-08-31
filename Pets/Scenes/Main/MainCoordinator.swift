@@ -20,7 +20,7 @@ final class MainCoordinator: Coordinator<Void> {
         let tabBarVC = MainTabBarVC()
         tabBarVC.viewControllers = [
             makeTabBarItemVC(tabBarItemType: .home),
-            makeTabBarItemVC(tabBarItemType: .wisperer),
+            makeTabBarItemVC(tabBarItemType: .communicator),
             makeTabBarItemVC(tabBarItemType: .profile)
         ]
 
@@ -35,8 +35,8 @@ final class MainCoordinator: Coordinator<Void> {
         switch type {
         case .home:
             vc = NewsFeedVC(vm: NewsFeedVM())
-        case .wisperer:
-            vc = UIViewController()
+        case .communicator:
+            vc = PetCommunicatorVC(vm: PetCommunicatorVM())
         case .profile:
             vc = UIViewController()
         }
