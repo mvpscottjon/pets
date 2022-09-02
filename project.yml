@@ -25,6 +25,10 @@ targets:
                 CURRENT_PROJECT_VERSION: 0
                 MARKETING_VERSION: 1.0.0
                 PRODUCT_BUNDLE_IDENTIFIER: com.seven.pets
+                DEVELOPMENT_TEAM: "NMM9F9QK67"
+                # capability
+                CODE_SIGN_ENTITLEMENTS: Pets/Pets.entitlements
+
         # info.plist
             info: 
                 path: Sources/Pets/Info.plist
